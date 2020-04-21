@@ -1,8 +1,29 @@
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 import Vue from 'vue'
-import App from './App.vue'
+import './plugins/bootstrap-vue'
+import VueRouter from 'vue-router';
+import App from './App.vue';
+import {routes} from './routes';
+import './custom.scss';
+import VueFusionCharts from 'vue-fusioncharts';
+import FusionCharts from 'fusioncharts';
+import Column2D from 'fusioncharts/fusioncharts.charts';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
 
 Vue.config.productionTip = false
 
+Vue.use(VueRouter);
+const router = new VueRouter({
+	mode: 'history',
+	routes
+});
+
+Vue.use(VueFusionCharts, FusionCharts, Column2D, FusionTheme);
+
+
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')
