@@ -14,9 +14,12 @@ $link-color:                              white;
 $link-hover-color:                        darken(gray, 15%) ;
 $link-hover-decoration:                   none;
 
+
+
 // Include Bootstrap and BootstrapVue SCSS files
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/src/index.scss';
+@import '~bootstrap-vue/src/components/sidebar/_sidebar.scss';
 
 // General style overrides and custom classes
 /*body {

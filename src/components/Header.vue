@@ -16,7 +16,7 @@
       </a>
     </div>
     <!-- sidebar left-->
-    <b-sidebar id="sidebar-1" title="WEATHER" shadow bg-variant="black" text-variant="white">
+    <b-sidebar id="sidebar-1" title="WEATHER" shadow bg-variant="black" text-variant="white" >
       <div class="px-3 py-2">
         <router-link to="/">
           <p id="first-line">

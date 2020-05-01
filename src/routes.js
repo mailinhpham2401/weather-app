@@ -1,11 +1,11 @@
-import Home from './components/Home.vue';
-import Header from './components/Header.vue';
-import Diagramm from './components/Diagramm.vue';
-import Radar from './components/Radar.vue';
-import Temperatur from './components/Temperatur.vue';
-import NextDays from './components/NextDays.vue';
-import Error from './components/Error.vue';
-import About from './components/About.vue';
+import Home from './components/home/Home.vue';
+import Header from './components/header/Header.vue';
+import Diagramm from './components/diagramm/Diagramm.vue';
+import Radar from './components/radar/Radar.vue';
+import Temperatur from './components/temperature/Temperatur.vue';
+import NextDays from './components/nextdays/NextDays.vue';
+import Error from './components/error/Error.vue';
+import About from './components/about/About.vue';
 
 export const routes = [
 	{path: '', component: Home},

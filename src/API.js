@@ -1,3 +1,4 @@
+/*API of radar */
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const API_KEY = 'a863d2bf51461f915d4cb114e08b40db';
 const WEATHER_API_URL = `${proxy}https://api.darksky.net/forecast/${API_KEY}/`;

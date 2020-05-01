@@ -1,5 +1,5 @@
 <template>
-	<b-container fluid >
+<b-container fluid >
 		<!--menu button-->
            <div class="row d-flex justify-content-end menu-leiste">
 		<!--sidebar-->
@@ -16,51 +16,8 @@
       </div>
     </b-sidebar>
 	</b-container>
+
 </template>
+<script src="./radar.ts"></script>
+<style src="./radar.scss" scoped lang="scss"></style>
 
-<script>
-export default {
-	
-}
-</script>
-
-<style >
-.menu-leiste {
-  margin-top: 20px;
-}
-#sidebar-right{
-	background-color: black;
-	padding-left: 10px;
-	
-}
-.wetter-setting-icon{
-	width: 13px;
-	height: 13px;
-	margin-right: 20px;
-	margin-top: -2px;
-}
-.radar-icon{
-	width: 14px;
-	height: 14px;
-	margin-right: 20px;
-	margin-top: -3px;
-}
-.info-icon{
-	width: 18px;
-	height: 18px;
-	margin-right: 17px;
-	margin-top: -3px;
-	margin-left: -2px;
-	
-}
-
-#first-line{
-	margin-top: 30px;
-}
-
-.hr{
-	margin-top: -15px;
-	margin-right: 10px;
-}
-
-</style>
