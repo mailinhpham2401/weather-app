@@ -1,4 +1,4 @@
 <template></template>
-<script src="./diagramm.ts"></script>
+<script src="./diagramm.js"></script>
 <style src="./diagramm.scss" scoped lang="scss"></style>
 

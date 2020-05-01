@@ -3,7 +3,7 @@
 	  <!--Navbar-->
     <div class="row d-flex justify-content-between menu-leiste">
       <a href="#/menu" v-b-toggle.sidebar-1>
-        <img src="../assets/menu_button.png" class="menu-button" />
+        <img src="@/assets/menu_button.png" class="menu-button" />
       </a>
       <div class="city" v-if="typeof weather.main !='undefined'">
         <strong>{{ weather.name }}</strong>
@@ -12,7 +12,7 @@
         <strong>Leipzig</strong>
       </div>
       <a href="#/suchen" v-b-toggle.sidebar-right>
-        <img src="../assets/suchen.png" class="suchen" />
+        <img src="@/assets/suchen.png" class="suchen" />
       </a>
     </div>
     <!-- sidebar left-->
@@ -20,19 +20,19 @@
       <div class="px-3 py-2">
         <router-link to="/">
           <p id="first-line">
-            <img src="../assets/wetter_setting.png" class="wetter-setting-icon" />Wetter
+            <img src="@/assets/wetter_setting.png" class="wetter-setting-icon" />Wetter
           </p>
         </router-link>
         <hr style="background-color:white" class="hr" />
         <router-link to="/radar">
           <p>
-            <img src="../assets/radar.png" class="radar-icon" />Radar
+            <img src="@/assets/radar.png" class="radar-icon" />Radar
           </p>
         </router-link>
         <hr style="background-color:white" class="hr" />
         <router-link to="/about">
           <p>
-            <img src="../assets/information.png" class="info-icon" />Über diesen App
+            <img src="@/assets/information.png" class="info-icon" />Über diesen App
           </p>
         </router-link>
         <hr style="background-color:white" class="hr" />
@@ -45,15 +45,15 @@
       shadow
       bg-variant="black"
       img
-      src="../assets/suchen.png"
+      src="@/assets/suchen.png"
       class="suchen-icon"
       text-variant="white"
     >
       <div slot="title">
-        <img src="../assets/suchen.png" class="suchen-icon" />
+        <img src="@/assets/suchen.png" class="suchen-icon" />
       </div>
       <div class="px-3 py-2">
-        <img src="../assets/close_white.png" class="close-white-icon" @click="removeType()" />
+        <img src="@/assets/close_white.png" class="close-white-icon" @click="removeType()" />
         <input class="input" 
 		v-model="query"
 		@keypress="fetchWeather" 
@@ -80,14 +80,14 @@
             <b-col cols="4" sm="8" lg="2"></b-col>
             <b-col cols="2" sm="4" lg="10">
               <p class="main-temp">{{ Math.round(weather.main.temp)}}</p>
-              <img src="../assets/regnerisch.png" class="wetter-icon" />
+              <img src="@/assets/regnerisch.png" class="wetter-icon" />
               <p class="max-temp">{{ Math.round(weather.main.temp_max) }}°C</p>
               <p class="min-temp">{{ Math.round(weather.main.temp_min) }}°C</p>
               <b-row>
-                <img src="../assets/humidity.png" class="humidity-icon" />
+                <img src="@/assets/humidity.png" class="humidity-icon" />
               </b-row>
               <b-row>
-                <img src="../assets/wind.png" class="wind-icon" />
+                <img src="@/assets/wind.png" class="wind-icon" />
               </b-row>
             </b-col>
             <b-col class="humidity">%</b-col>
@@ -97,7 +97,7 @@
         </b-row>
       </b-col>
       <b-col cols="1" sm="1" md="1" lg="1" xl="2" class="grad">
-        <img src="../assets/grad.png" class="grad-size" />
+        <img src="@/assets/grad.png" class="grad-size" />
       </b-col>
 
       <b-col cols="3" sm="3" md="2" lg="2" xl="1" class="sonne"></b-col>
@@ -111,14 +111,14 @@
             <b-col cols="4" sm="8" lg="2"></b-col>
             <b-col cols="2" sm="4" lg="10">
               <p class="main-temp">{{ Math.round(weather.main.temp)}}</p>
-              <img src="../assets/regnerisch.png" class="wetter-icon" />
+              <img src="@/assets/regnerisch.png" class="wetter-icon" />
               <p class="max-temp">{{ Math.round(weather.main.temp_max) }}°C</p>
               <p class="min-temp">{{ Math.round(weather.main.temp_min) }}°C</p>
               <b-row>
-                <img src="../assets/humidity.png" class="humidity-icon" />
+                <img src="@/assets/humidity.png" class="humidity-icon" />
               </b-row>
               <b-row>
-                <img src="../assets/wind.png" class="wind-icon" />
+                <img src="@/assets/wind.png" class="wind-icon" />
               </b-row>
             </b-col>
             <b-col class="humidity">%</b-col>
@@ -128,7 +128,7 @@
         </b-row>
       </b-col>
       <b-col cols="1" sm="1" md="1" lg="1" xl="2" class="grad">
-        <img src="../assets/grad.png" class="grad-size" />
+        <img src="@/assets/grad.png" class="grad-size" />
       </b-col>
 
       <b-col cols="3" sm="3" md="2" lg="2" xl="1" class="sonne"></b-col>
@@ -156,7 +156,7 @@
           <p class="main-temperature">
             <b>{{ Math.round(weather.main.temp) }}°C</b>
           </p>
-          <img src="../assets/regnerisch.png" class="icon" />
+          <img src="@/assets/regnerisch.png" class="icon" />
           <p class="max-grad">
             <b>{{ Math.round(weather.main.temp_max) }}°C</b>
           </p>
@@ -190,6 +190,6 @@
 	</div>
   </div>
   </template>
-<script src="./header.ts"></script>
+<script src="./header.js"></script>
 <style src="./header.scss" scoped lang="scss"></style>
 

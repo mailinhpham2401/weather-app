@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.7.0",
+    "@types/chart.js": "^2.9.20",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
     "babel-eslint": "^10.1.0",
@@ -58,7 +59,8 @@
     "not dead"
   ],
   "vuePlugins": {
-    "ui": ["my-ui.js"]
+    "ui": [
+      "my-ui.js"
+    ]
   }
-  
 }

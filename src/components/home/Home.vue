@@ -1,17 +1,17 @@
 <template>
 <b-container fluid >
 	<Header></Header>
-	<Temperatur></Temperatur>
+	<Temperature></Temperature>
 	<Diagramm></Diagramm>
 	<NextDays></NextDays>
 </b-container>
 </template>
 
 <script>
-import Header from '../Header.vue';
-import Diagramm from '../Diagramm.vue';
-import Temperatur from '../Temperatur.vue';
-import NextDays from '../NextDays.vue';
+import Header from '../header/Header.vue';
+import Diagramm from '../diagramm/Diagramm.vue';
+import Temperature from '../temperature/Temperature.vue';
+import NextDays from '../nextdays/NextDays.vue';
 
 
 export default {
@@ -19,7 +19,7 @@ export default {
 	components: {
 		Header,
 		Diagramm,
-		Temperatur,
+		Temperature,
 		NextDays
 	}
 	

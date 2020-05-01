@@ -1,9 +1,9 @@
-import API from '../../API.js'
+import API from '../../API.js';
 import Chart from 'chart.js';
 import axios from 'axios';
-import Diagramm from '../diagramm/diagramm'
+import Diagramm from '../diagramm/Diagramm.vue';
 export default {
-	 
+	
 	 components:{
 		 Diagramm
 	 },

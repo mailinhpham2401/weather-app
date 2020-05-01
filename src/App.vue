@@ -8,7 +8,7 @@
 </template>
 
 <script>
-
+import './global.scss';
 export default {
   name: "app",
 

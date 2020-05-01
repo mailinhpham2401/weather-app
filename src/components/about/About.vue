@@ -63,6 +63,6 @@
 		</div>	
 </b-container>
 </template>
-<script src="./about.ts"></script>
+<script src="./about.js"></script>
 <style src="./about.scss" scoped lang="scss"></style>
 
