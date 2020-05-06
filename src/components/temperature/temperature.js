@@ -13,17 +13,7 @@ export default {
 	}
 },
   methods:{
-	  fetchWeather (e) {
-		  if (e.key == "Enter"){
-			  fetch(`https://api.openweathermap.org/data/2.5/forecast?APPID=${api_key}&q=${this.city},ca&units=metric`)
-			  .then(res => {
-				  return res.json();
-			  }).then(this.setResults);
-		  }	
-	  },
-	  setResults (results){
-		  this.weather = results;
-	  }
+	  
   }
 }
 

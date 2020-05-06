@@ -13,6 +13,7 @@ import Diagramm from '../diagramm/Diagramm.vue';
 import Temperature from '../temperature/Temperature.vue';
 import NextDays from '../nextdays/NextDays.vue';
 
+import '../../custom.scss';
 
 export default {
 	

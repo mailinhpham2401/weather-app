@@ -23,7 +23,7 @@ export default {
 	  const date = new Date(unix * 1000);
 	   return DAYS[date.getDay()];
 	  },
-	   fetchWeather2() {
+	  fetchWeatherForecast() {
 	  axios
 	  .get(`${this.url_base}forecast?APPID=${this.api_key}&q=${this.query},ca&units=metric`)
 	  .then(response => {
@@ -33,7 +33,7 @@ export default {
 	  })
   },
 		  submit() {
-	this.fetchWeather2();	
+	this.fetchWeatherForecast();	
 	   },
 	  dateBuilder (unix) {
 	let d = new Date(unix * 1000);
@@ -44,7 +44,7 @@ export default {
   }
   },
    mounted () {
-  this.fetchWeather();
+  this.fetchWeatherForecast();
    }
 }
 

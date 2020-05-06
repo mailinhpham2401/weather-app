@@ -15,17 +15,64 @@ $link-hover-color:                        darken(gray, 15%) ;
 $link-hover-decoration:                   none;
 
 
-
 // Include Bootstrap and BootstrapVue SCSS files
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/src/index.scss';
-
+@import '~bootstrap-vue/src/components/sidebar/_sidebar.scss';
 
 // General style overrides and custom classes
-/*body {
-  margin: 0;
-}
+//body {
+//  margin: 0;
+//}
+//.my-widget {
+//  color: var(--danger);
+//}
 
-.my-widget {
-  color: var(--danger);
-}*/
+.b-sidebar {
+	display: flex;
+	flex-direction: column;
+	position: fixed !important;
+	top: 0;
+	width: $b-sidebar-width;
+	max-width: 100% !important;
+	height: 100vh;
+	margin: 0 !important;
+	outline: 0;
+	transform: translateX(0);
+	
+   
+  
+	&.slide {
+	  transition: transform $b-sidebar-transition-duration ease-in-out ;
+	  
+	  @media (prefers-reduced-motion: reduce) {
+		transition: none;
+	  }
+	}
+  
+	&:not(.b-sidebar-right) {
+	  left: 0;
+	  right: auto;
+  
+	  &.slide:not(.show) {
+		transform: translateX(-100%);
+	  }
+  
+	  > .b-sidebar-header .close {
+		margin-left: auto;
+	  }
+	}
+  
+	&.b-sidebar-right {
+	  left: auto;
+	  right: 0;
+  
+	  &.slide:not(.show) {
+		transform: translateX(100%);
+	  }
+  
+	  > .b-sidebar-header .close {
+		margin-right: auto;
+	  }
+	}
+}

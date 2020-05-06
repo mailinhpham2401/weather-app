@@ -9,6 +9,7 @@
 
 <script>
 import './global.scss';
+
 export default {
   name: "app",
 
@@ -16,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style scoped lang="scss" >
   // Import custom SASS variable overrides, or alternatively
   // define your variable overrides here instead
   

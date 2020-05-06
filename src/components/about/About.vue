@@ -7,7 +7,7 @@
 		<b-col><img src="@/assets/information.png" class="info-icon"></b-col>
 		<b-col class="about"><strong>About</strong></b-col>
 	</b-row>
-	<a href="#/about-menu" v-b-toggle.sidebar-right><img src="@/assets/menu_button.png" class="menu-button" /></a>
+	<b-button v-b-toggle.sidebar-right style="background:transparent; border: none"><img src="@/assets/menu_button.png" class="menu-button" /></b-button>
 	   </div>
 	<b-sidebar id="sidebar-right" title="WEATHER" right shadow bg-variant="black" text-variant="white">
   <div class="px-3 py-2">
