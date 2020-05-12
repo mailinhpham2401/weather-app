@@ -1,55 +1,78 @@
-
+import axios from 'axios';
 export default {
 	name: 'nextdays',
 	components: {},
-	props: [],
+	props: [
+		'currentCity',
+		'ForeCastOfCurrentCity'
+	],
 	data() {
 		return {
+			isShown: false,
 			api_key: 'c9f562aaffcdefaf40f2ed808d202c9b',
 			url_base: 'https://api.openweathermap.org/data/2.5/',
 			query: '',
 			weather: {},
+			icons:{
+				'Rain':require('../../assets/regnerisch.png'),
+				'Clear': require('../../assets/sonne.png'),
+				'Clouds':require('../../assets/wolkig.png'),
+			},
 			weathers: [],
-			PREFERRED_TIME: '06:00:00',
-			DAYS: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+			PREFERRED_TIME: '12:00:00',
+			DAYS: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
 
 		}
 	},
 	methods: {
-		formatTemperature(temperature) {
-			return Math.round(temperature);
-		},
-
 		getDayName(unix) {
 			const date = new Date(unix * 1000);
-			return DAYS[date.getDay()];
+			return this.DAYS[date.getDay()];
 		},
-
 		fetchWeatherForecast() {
+			//console.log('fetchWeatherForecast');
 			axios
-				.get(`${this.url_base}forecast?APPID=${this.api_key}&q=${this.query},ca&units=metric`)
+				.get(`${this.url_base}forecast?APPID=${this.api_key}&q=${this.query}&units=metric`)
 				.then(response => {
 					this.weathers = response.data.list.filter(weather => {
-						return weather["dt_txt"].includes(PREFERRED_TIME);
+						return weather["dt_txt"].includes(this.PREFERRED_TIME);
 					})
 				})
+			//this.weather.splice(0, this.weather.length); // weather in 5 days not repeat per hour
 		},
-
-		submit() {
-			this.fetchWeatherForecast();
+		
+		ForeCastOfCurrentCity(lon,lat) {
+			//console.log('fetchWeatherForecast');
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(position=>{
+				  axios
+				.get(`${this.url_base}forecast?APPID=${this.api_key}&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+				.then(response => {
+					this.weathers = response.data.list.filter(weather => {
+						return weather["dt_txt"].includes(this.PREFERRED_TIME);
+					})
+				})
+				})};				
+			//this.weather.splice(0, this.weather.length); // weather in 5 days not repeat per hour
 		},
-
-		dateBuilder(unix) {
-			let d = new Date(unix * 1000);
+		nextDays() {
+			let d = new Date();
 			let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 			let dates = d.getDate();
 			let month = months[d.getMonth()];
+			/*for (i = 0; i < 5;i++) {
+				let nextdays = new Date(dates+i, month );
+				console.log(nextdays);
+			}*/
 			return ` ${dates} / ${month} `;
-		}
+
+		},
 	},
 
 	mounted() {
 		this.fetchWeatherForecast();
+		this.ForeCastOfCurrentCity();
+		
 	}
 };
 

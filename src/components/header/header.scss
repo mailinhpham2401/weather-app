@@ -20,12 +20,6 @@
 	margin-right:-10px;
 
   }
-  .heute {
-	background-color: #f37320;
-	font-size: 18px;
-	margin-top: 10px;
-	padding-left: 5px;
-  }
   #sidebar-right,
   #sidebar-left {
 	background-color: black;
@@ -93,7 +87,7 @@
   
   /*temperature*/
   .grad {
-	padding:0;  
+	padding:0; 
   }
   .grad-size {
 	width: 60px;
@@ -104,8 +98,6 @@
 	font-size: 200px;
 	color: white; 
   } 
-  
-  
   .sonne {
 	/*width: 120px;*/
 	   padding-left: 5%;
@@ -117,46 +109,83 @@
 	   border-left: 15px solid white;
 	   border-top: 15px solid white;
 	   border-bottom: 15px solid white;	 
-  }
-  
+  }  
   .wrap {
 	background-color: red;
   }
-  .wetter-icon{
-	  
-	  margin-top:-400px;
-	   width:90px;
+  /*.rainy{
+	background: url('../../assets/regnerisch.png');
+	background-size: 95px;
+	margin-top:-60px;
+	margin-left:0px;
+	margin-bottom:-30px;
+	width:95px;
+	height:77px;}
+  .clear{
+	background: url('../../assets/sonne.png');
+	background-size: 75px;
+	margin-top:-65px;
+	margin-left:10px;
+	margin-bottom:-30px;
+	width:75px;
+	height:75px;
   }
+  .snowy{
+    background: url('../../assets/schnee.png');
+	background-size: 92px;
+	margin-top:-60px;
+	margin-left:3px;
+	margin-bottom:-30px;
+	width:97px;
+	height:75px;
+  }
+  .cloudy{
+	background: url('../../assets/wolkig.png');
+	background-size: 95px;
+	margin-top:-60px;
+	margin-left:0px;
+	margin-bottom:-30px;
+	width:94px;
+	height:77px;
+  }*/
+  .main-icon{
+	  width:120px;
+	  height:100px;
+	  margin-left: -20px;
+	  margin-top: -366px;
+	  
+  }   
+  
   .max-temp{
 	 font-size: 24px;
 	 color:black;
-	 margin-top: -289px;
-	 margin-left: 27px;   
+	 margin-top: -250px;
+	 margin-left: 16px;   
   }
   .min-temp{
 	  font-size: 15px;
 	  color:black;
 	  margin-top: -18px;
-	  margin-left: 27px;
+	  margin-left: 28px;
   }
   .humidity{
 	  font-size: 21px;
 	  color:black;
 	  margin-top: -50px;
-	  margin-left: 73px;
+	  margin-left: 80px;
 	  z-index:1;
   }
   
   .humidity-icon{
 	  margin-top: -10px;
-	  margin-left:12px;
+	  margin-left:-2px;
 	  width:14px;
 	  height: 25px;
 	  
   }
   .wind-icon{
 	  margin-top: 10px;
-	  margin-left:12px;
+	  margin-left:-2px;
 	  width:14px;
 	  height: 15px;
   }
@@ -169,7 +198,7 @@
   .wind-number{
 	  color:black;
 	  font-size: 20px;
-	  margin-left: 27px;
+	  margin-left: 32px;
 	  margin-top: -3px;
 	  z-index: 1;
   }
@@ -180,46 +209,35 @@
 	  background-color: #80ceff;
 	  padding: 0;
 	  margin: 0;
+	  padding-right: 10px;
+	  padding-left:10px;
 	  width: 100%;
-	  min-height: 30vh;
-	  
+	  min-height: 30vh;	  
   }
-  
   .top{
 	  margin-top: 10px
   }
-  
   .feuchtigkeit{
 	  margin-left: 5px;
   }
-  
-  .icon{
+  .main-temperature{
+	  font-size: 25px;
+  }
+  .nextday-icon{
 	  margin-top:-10px;
 	  margin-bottom: 7px;
+	  width:60px;
+	  height:55px;
   }
-  
-  .max-grad{
-	   margin-left: 4px;
-	   font-size: 23px;
-  }
-  
-  .min-grad{
-	   margin-top: -17px;
-	   margin-left: -2px;
-	   
-  }
-  
   .day{
-	  margin-top: -8px;
+	  margin-top: 10px;
   }
-  
-  .day-month{
+    .day-month{
 	  margin-top: -3px;
 	  margin-left: -2px;
-	  
   }
   .nph{
 	  margin-top: -45px;
-	  margin-left: 28px;
+	  margin-left: 29px;
   }
 
