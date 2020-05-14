@@ -20,6 +20,13 @@ As the user first open the app, they will see the weather in their current locat
 7. Layouts : Breakpoint
 8. Radar isn't done
 
+## Getting Started
+
+The stack is built using [vue-cli webpack](https://github.com/vuejs-templates/webpack) so to get started all you have to do is:
+
+> npm run serve
+
+
 
 
 
