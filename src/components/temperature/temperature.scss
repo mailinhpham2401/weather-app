@@ -1,19 +1,16 @@
 .grad {
-	padding:0;  
+	padding:0; 
   }
   .grad-size {
 	width: 60px;
 	height: 140px;
   }
   .number {
-	padding-left: 3%;
+	padding-left: -3%;
 	font-size: 200px;
 	color: white; 
   } 
-  
-  
   .sonne {
-	/*width: 120px;*/
 	   padding-left: 5%;
 	   margin-top: 50px;
 	   height:200px;
@@ -23,59 +20,58 @@
 	   border-left: 15px solid white;
 	   border-top: 15px solid white;
 	   border-bottom: 15px solid white;	 
-  }
-  
-  .wrap {
-	background-color: red;
-  }
-  .wetter-icon{
-	  
-	  margin-top:-400px;
-	   width:90px;
-  }
+  }  
+  .main-icon{
+	  width:120px;
+	  height:100px;
+	  margin-left: 50px;
+	  margin-top: -366px;	  
+  }   
   .max-temp{
 	 font-size: 24px;
 	 color:black;
-	 margin-top: -289px;
-	 margin-left: 27px;   
+	 margin-top: -250px;
+	 margin-left: 80px;   
   }
   .min-temp{
 	  font-size: 15px;
 	  color:black;
 	  margin-top: -18px;
-	  margin-left: 27px;
+	  margin-left: 91px;
   }
   .humidity{
 	  font-size: 21px;
 	  color:black;
 	  margin-top: -50px;
-	  margin-left: 73px;
+	  margin-left: 155px;
 	  z-index:1;
   }
-  
   .humidity-icon{
 	  margin-top: -10px;
-	  margin-left:12px;
+	  margin-left:64px;
 	  width:14px;
-	  height: 25px;
-	  
+	  height: 25px;	  
   }
   .wind-icon{
 	  margin-top: 10px;
-	  margin-left:12px;
+	  margin-left:64px;
 	  width:14px;
 	  height: 15px;
   }
   .humidity-number{
 	  color:black;
 	  font-size: 20px;
-	  margin-left: 27px;
+	  margin-left: 97px;
 	  margin-top: -30px;
   }
   .wind-number{
 	  color:black;
 	  font-size: 20px;
-	  margin-left: 27px;
+	  margin-left: 97px;
 	  margin-top: -3px;
 	  z-index: 1;
   }
+  .nph{
+	margin-top: -45px;
+	margin-left: 38px;
+}

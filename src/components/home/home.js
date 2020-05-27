@@ -5,15 +5,19 @@ import Diagramm from '../diagramm/Diagramm.vue';
 import moment from 'moment';
 import 'chartjs-plugin-datalabels';
 import Temperature from '../temperature/Temperature.vue';
+import Header from '../header/Header.vue';
+import NextDays from '../nextdays/NextDays.vue';
+import {mapState, mapGetters} from 'vuex';
 
+import '../../custom.scss';
 
 export default {
-    props:[
-		'weather'
-	],
+
 	components: {
+		Header,
 		Diagramm,
-		Temperature
+		Temperature,
+		NextDays
 	},
 	data() {
 		return {
@@ -38,8 +42,6 @@ export default {
 			dates: [],
 			temps: [],
 			scaleFontColor:'white'
-
-
 		}
 	},
 	methods: {
@@ -50,7 +52,7 @@ export default {
 		currentCity() {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(position => {
-					//console.log('meo');
+					axios
 					fetch(`${this.url_base}weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${this.api_key}`)
 						.then(res => {
 							return res.json();
@@ -59,51 +61,10 @@ export default {
 				};
 	
 			},	
-					/*weatherId = this.weather[0].id;
-			   
-			   //change Background
-			   if(weatherId >= 200 && weatherId < 550){
-				   //rainy bg
-				   removeClass('clear').addClass('rainy');
-			   } else if (weatherId >= 600 && weatherId < 700){
-				   //snow
-				   removeClass('clear').addClass('snowy');
-				   
-			   } else if (weatherId >= 700 && weatherId < 800){
-				   //mist smoke
-				   removeClass('clear').addClass('snowy');
-				   
-			   } else {
-				   //keep the default
-				   console.log("BG image set to default");
-				   
-				   //TODO: Change BG based on time
-			   }*/
 			
 		setResultsCurrentWeather(results) {
 			this.weather = results;
 		},
-
-		/*createIcon(){
-			var weatherId = this.weather.weather[0].id;
-			if(weatherId >= 200 && weatherId < 550){
-				//rainy bg
-				$('p').removeClass('clear').addClass('rainy');
-			} else if (weatherId >= 600 && weatherId < 700){
-				//snow
-				$('p').removeClass('clear').addClass('snowy');
-				
-			} else if (weatherId >= 700 && weatherId < 800){
-				//mist smoke
-				$('p').removeClass('clear').addClass('snowy');
-				
-			} else {
-				//keep the default
-				console.log("BG image set to default");
-				
-				//TODO: Change BG based on time
-			}
-		},*/
 		/* today temperature */
 		fetchWeather() {
 			fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
@@ -127,11 +88,9 @@ export default {
 						return weather["dt_txt"].includes(this.PREFERRED_TIME);
 					})
 				})
-			//this.weather.splice(0, this.weather.length); // weather in 5 days not repeat per hour
 		},
 
 		ForeCastOfCurrentCity() {
-			//console.log('fetchWeatherForecast');
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(position => {
 					axios
@@ -195,7 +154,7 @@ export default {
 							plugins:{
                                datalabels:{
 								   formatter:function(value){
-									   return value + '°C';
+									   return Math.round(value) ;
 								   }
 							   }
 							},
@@ -338,13 +297,10 @@ export default {
 			};
 		}
 	},
+	
 	mounted() {
 		this.fetchWeather(); /* today temperature */
 		this.currentCity();
 		this.ForeCastOfCurrentCity();
-		/*this.createIcon();*/
-	}
-
-
+	},
 };
-

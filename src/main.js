@@ -10,7 +10,8 @@ import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Column2D from 'fusioncharts/fusioncharts.charts';
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
-
+import moment from 'moment';
+import store from './store/store'
 
 Vue.config.productionTip = false
 
@@ -21,9 +22,10 @@ const router = new VueRouter({
 });
 
 Vue.use(VueFusionCharts, FusionCharts, Column2D, FusionTheme);
-
+Vue.prototype.moment = moment
 
 new Vue({
+  store,
   render: h => h(App),
   router
 }).$mount('#app')
