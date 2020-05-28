@@ -13,12 +13,10 @@ import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import moment from 'moment';
 
 
-
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-
 	routes
 });
 
