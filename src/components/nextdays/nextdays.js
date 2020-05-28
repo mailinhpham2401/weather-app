@@ -3,8 +3,7 @@ export default {
 	name: 'nextdays',
 	components: {},
 	props: [
-		'currentCity',
-		'ForeCastOfCurrentCity'
+		'weather'
 	],
 	data() {
 		return {
@@ -30,19 +29,15 @@ export default {
 			return this.DAYS[date.getDay()];
 		},
 		fetchWeatherForecast() {
-			//console.log('fetchWeatherForecast');
-			axios
+				axios
 				.get(`${this.url_base}forecast?APPID=${this.api_key}&q=${this.query}&units=metric`)
 				.then(response => {
 					this.weathers = response.data.list.filter(weather => {
 						return weather["dt_txt"].includes(this.PREFERRED_TIME);
 					})
 				})
-			//this.weather.splice(0, this.weather.length); // weather in 5 days not repeat per hour
-		},
-		
+		},		
 		ForeCastOfCurrentCity(lon,lat) {
-			//console.log('fetchWeatherForecast');
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(position=>{
 				  axios
@@ -53,17 +48,12 @@ export default {
 					})
 				})
 				})};				
-			//this.weather.splice(0, this.weather.length); // weather in 5 days not repeat per hour
 		},
 		nextDays() {
 			let d = new Date();
 			let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 			let dates = d.getDate();
 			let month = months[d.getMonth()];
-			/*for (i = 0; i < 5;i++) {
-				let nextdays = new Date(dates+i, month );
-				console.log(nextdays);
-			}*/
 			return ` ${dates} / ${month} `;
 
 		},

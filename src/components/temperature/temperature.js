@@ -27,7 +27,6 @@ export default {
 	currentCity() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(position => {
-				//console.log('meo');
 				fetch(`${this.url_base}weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${this.api_key}`)
 					.then(res => {
 						return res.json();

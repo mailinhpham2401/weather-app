@@ -1,6 +1,5 @@
 <template>
 <b-container fluid >
-	<div>
     <!--Navbar-->
     <div class="row d-flex justify-content-between menu-leiste">
       <b-button v-b-toggle.sidebar-left style="background:transparent; border:none">
@@ -64,7 +63,6 @@
 
     <!-- appTemperatur-->
     <Temperature  :weather="weather"></Temperature>
-    <!-- end: appTemperatur -->
     <!--appDiagramm-->   
 	  <div v-if="typeof weather.main != 'undefined'" :getData="getData">		
         <canvas id="myChart"></canvas>
@@ -75,57 +73,14 @@
 		</div>
 	  </div>
    
-<Diagramm v-if="typeof weather.main != 'undefined'" :query="query"></Diagramm>
+    <Diagramm></Diagramm>
     <!--appNextdays-->
     <p>
       <strong>
         <div class="row heute">Nächste 5 Tage</div>
       </strong>
     </p>
-    <b-row class="text-center" v-if="typeof weather.main != 'undefined'">
-      <b-col class="background" v-for="weather in weathers" :key="weather.dt">
-        <div class="top">
-          <p class="main-temperature">
-            <b>{{ Math.round(weather.main.temp) }}°C</b>
-          </p>
-          <img :src="icons[weather.weather[0].main]" class="nextday-icon"/>
-          <p class="day">
-            <b>{{ getDayName(weather.dt) }}</b>
-          </p>
-          <p class="day-month">
-            <i>
-              <b>{{ nextDays(weather.dt) }}</b>
-            </i>
-          </p>
-        </div>
-      </b-col>
-    </b-row>
-    <div v-else>
-      <b-row
-        :ForeCastOfCurrentCity="ForeCastOfCurrentCity()"
-        class="text-center"
-        v-if="typeof weather.main != 'undefined'"
-      >
-        <b-col class="background" v-for="weather in weathers" :key="weather.dt">
-          <div class="top">
-            <p class="main-temperature">
-              <b>{{ Math.round(weather.main.temp) }}°C</b>
-            </p>
-            <img :src="icons[weather.weather[0].main]" class="nextday-icon"/>
-            <p class="day">
-              <b>{{ getDayName(weather.dt) }}</b>
-            </p>
-            <p class="day-month">
-              <i>
-                <b >{{ nextDays(weather.dt) }}</b>
-              </i>
-            </p>
-          </div>
-        </b-col>
-      </b-row>
-    </div>
-  </div>
-  	<NextDays></NextDays>
+  	<NextDays :weather="weather"></NextDays>
 </b-container>
 </template>
 

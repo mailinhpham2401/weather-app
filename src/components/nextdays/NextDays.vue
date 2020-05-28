@@ -1,10 +1,5 @@
 <template >
 <div>
-<!--<p>
-      <strong>
-        <div class="row heute">Nächste 5 Tage</div>
-      </strong>
-    </p>-->
     <b-row class="text-center" v-if="typeof weather.main != 'undefined'">
       <b-col class="background" v-for="weather in weathers" :key="weather.dt">
         <div class="top">
