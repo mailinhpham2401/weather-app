@@ -1,7 +1,6 @@
 import Chart from 'chart.js';
 import axios from 'axios';
 import Diagramm from '../diagramm/Diagramm.vue';
-import moment from 'moment';
 import 'chartjs-plugin-datalabels';
 import Temperature from '../temperature/Temperature.vue';
 import Header from '../header/Header.vue';
@@ -10,7 +9,6 @@ import {mapState, mapGetters} from 'vuex';
 import '../../custom.scss';
 
 export default {
-
 	components: {
 		Header,
 		Diagramm,
@@ -100,15 +98,6 @@ export default {
 						})
 				})
 			};
-		},
-		nextDays(i) {
-			let days = [];
-			let daysRequired = 5;
-			for (let i = 0; i < daysRequired; i++) {
-				days.push(moment().add(i, 'days').format('D/MM '));
-			}
-			return days[0];
-
 		},
 		/* chart */
 		getData() {
