@@ -53,7 +53,7 @@
       id="sidebar-right"
       right
       shadow
-      bg-variant="white"
+      bg-variant="black"
       img
       src="@/assets/suchen.png"
       text-variant="white"
