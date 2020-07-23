@@ -54,6 +54,12 @@
         </b-col>
       </b-row>
     </div>
+		<!-- Halbe Sonne -->
+		<b-row>
+		<b-col></b-col>		
+		<b-col cols="auto" sm="auto" md="auto" lg="auto" class="sonne"></b-col>
+		<b-col></b-col>
+		</b-row>
  </div>
 
 </template>

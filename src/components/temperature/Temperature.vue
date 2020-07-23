@@ -7,7 +7,7 @@
             <b-col cols="4" sm="8" lg="2"></b-col>
             <b-col cols="2" sm="4" lg="10">
               <p class="main-temp">{{ Math.round(weather.main.temp)}}</p>
-			  <img :src="icons[weather.weather[0].main]" class="main-icon"/>
+			        <img :src="icons[weather.weather[0].main]" class="main-icon"/>
               <p class="max-temp">{{ Math.round(weather.main.temp_max) }}°C</p>
               <p class="min-temp">{{ Math.round(weather.main.temp_min) }}°C</p>
               <b-row>

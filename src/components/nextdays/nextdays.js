@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 export default {
 	name: 'nextdays',
 	components: {},
@@ -49,14 +50,23 @@ export default {
 				})
 				})};				
 		},
-		nextDays() {
+		 /* nextDays() {
 			let d = new Date();
 			let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 			let dates = d.getDate();
 			let month = months[d.getMonth()];
 			return ` ${dates} / ${month} `;
 
-		},
+		} */
+		nextDays() {
+			let days = [];
+			
+			let daysRequired = 5;
+			for (let i = 0; i < daysRequired; i++) {
+				days.push(moment().add(i, 'days').format('D/MM '));	
+			}
+			return days[0];
+			}    
 	},
 
 	mounted() {

@@ -1,4 +1,3 @@
-import API from '../../API.js';
 import Chart from 'chart.js';
 import axios from 'axios';
 import Diagramm from '../diagramm/Diagramm.vue';
@@ -8,7 +7,6 @@ import Temperature from '../temperature/Temperature.vue';
 import Header from '../header/Header.vue';
 import NextDays from '../nextdays/NextDays.vue';
 import {mapState, mapGetters} from 'vuex';
-
 import '../../custom.scss';
 
 export default {
